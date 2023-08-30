@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Skills Saya</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html">Portofolio Rafli Albhukhori</a>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="history.html">Sejarah</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content skills-section">
+    <h1>Skills Saya</h1>
+    <div class="skills-chart">
+      <canvas id="skillsChart"></canvas>
+    </div>
+  </section>
+
+  <button class="back-button button"><a href="index.html">Kembali</a></button>
+
+  <script src="script.js"></script>
+  <script>
+    const skillsChart = new Chart(document.getElementById("skillsChart"), {
+      type: 'doughnut',
+      data: {
+        labels: ["HTML", "CSS", "Python", "PHP", "JavaScript"],
+        datasets: [{
+          data: [75, 60, 20, 10, 19],
+          backgroundColor: ["#FF9900", "#00BFFF", "#32CD32", "#FF6347", "#FFD700"]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          position: 'bottom'
+        },
+        title: {
+          display: true,
+          text: 'Keterampilan'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
